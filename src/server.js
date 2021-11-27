@@ -19,3 +19,13 @@ server.use(express.urlencoded({ extended: true }))
 server.use(routes)
 
 server.listen(3000, () => console.log('rodando'))
+
+require('dotenv/config');
+
+// ...
+
+const PORT = process.env.PORT || 3000;
+
+server.listen(PORT, function () {
+  console.log('Server listening at', PORT);
+});
